@@ -24,14 +24,14 @@ public class Enrollee {
 	@NotNull
 	private String name;
 	@Nullable
-	private String phone_number;
+	private String phoneNumber;
 	private Boolean activationStatus;
 	
 	@OneToMany( cascade = CascadeType.ALL,
 				orphanRemoval=true )
 	@JoinColumn(name = "enrollee_id")
 	private List<Dependent> dependents = new ArrayList<>();
-	
+
 
 	protected Enrollee() {}
 
@@ -74,4 +74,13 @@ public class Enrollee {
 	public void setDependents(List<Dependent> dependents) {
 		this.dependents = dependents;
 	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
 }
